@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/255269bd13.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="#">Collections</a>
+                  <a href="#">Men</a>
+                  <a href="#">Women</a>
+                  <a href="#">About</a>
+                  <a href="#">Contact</a>
+                </div>
+            </div>
+            <h1>liberty</h1>
+            <div class="nav_menu">
+                <ul>
+                    <li>Collections</li>
+                    <li>Men</li>
+                    <li>Women</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+        <div class="icons">
+            <div class="cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <div class="user">
+                <i class="fa-solid fa-user"></i>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="wrapper">
+            <div class="product-box">
+                <div class="all-images">
+                    <div class="black-color-div">
+                        <div class="side-images">
+                            <img src="blackimg1.webp" onclick="clickimg(this)">
+                            <img src="blackimg2.webp" onclick="clickimg(this)">
+                            <img src="blackimg3.webp" onclick="clickimg(this)">
+                            <img src="blackimg4.webp" onclick="clickimg(this)">
+                        </div>
+                        <div class="image">
+                            <img src="blackimg1.webp" id="mainblackimgbox">
+                        </div>
+                    </div>
+                    <div class="white-color-div">
+                        <div class="side-images">
+                            <img src="whiteimg1.webp" onclick="clickimgwhite(this)">
+                            <img src="whiteimg2.webp" onclick="clickimgwhite(this)">
+                            <img src="whiteimg3.webp" onclick="clickimgwhite(this)">
+                            <img src="whiteimg4.webp" onclick="clickimgwhite(this)">
+                        </div>
+                        <div class="image">
+                            <img src="whiteimg1.webp" id="mainwhiteimgbox">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-details">
+                <div class="content">
+                    <p class="brand-name">Klaur Melbourne</p>
+                    <h2>Women Beige Heels Sandal</h2>
+                    <p class="offer">Special price</p>
+                    <div class="price-box">
+                        <span class="off">59% off</span>
+                        <strike>&#8377;4,499</strike>
+                        <span class="red-price">&#8377;1,804</span>
+                    </div>
+                    <div class="rating">
+                        <div class="rate">
+                            <span>4.7</span>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="review">
+                            <span>1469 ratings and 150 reviews</span>
+                        </div>
+                    </div>
+                    <div class="color">
+                        <h3>Color :</h3>
+                        <div class="color-options">
+                            <img src="blackimg1.webp" onclick="choosecolor(this)" id="black">
+                            <img src="whiteimg1.webp" onclick="choosecolor(this)" id="white">
+                        </div>
+                    </div>
+                    <div class="size">
+                        <h3>Size : </h3> 
+                        <div class="size-options">
+                            <ul>
+                                <li>3</li>
+                                <li>4</li>
+                                <li>5</li>
+                                <li>6</li>
+                                <li>7</li>
+                                <li>8</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="cart-button">
+                        <span class="fa fa-cart-shopping"></span>
+                        ADD TO CART
+                    </button>
+                    <button class="buy-button">
+                        <span class="fa-solid fa-bolt-lightning"></span>
+                        BUY NOW
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function choosecolor(imgDiv){
+            var imgDivShow ;
+            imgDivShow = imgDiv.id
+            console.log(imgDivShow);
+            if(imgDivShow === "black"){
+                document.querySelector(".black-color-div").style.display = "flex";
+                document.querySelector(".white-color-div").style.display = "none";
+            }
+            else {
+                document.querySelector(".black-color-div").style.display = "none";
+                document.querySelector(".white-color-div").style.display = "flex";
+            }
+        }
+        function clickimg(sideImg){
+            var fullImg = document.getElementById("mainblackimgbox");
+            fullImg.src = sideImg.src
+        }
+        function clickimgwhite(sideImg){
+            var fullImg = document.getElementById("mainwhiteimgbox");
+            fullImg.src = sideImg.src
+        }
+    </script>
+</body>
+</html>
